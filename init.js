@@ -708,15 +708,15 @@ function refreshRecords() {
     );
 }
 
-function readReady(callresult) { // сообщения получены - показывает
+function readReady(callresult) { 
     if ( callresult.error!=undefined )
         alert(callresult.error);
     else {
         records=[];
-        if ( callresult.result!="" ) { // либо строка пустая - сообщений нет
-            // либо в строке - JSON-представление массива сообщений
+        if ( callresult.result!="" ) { 
+            
             records=JSON.parse(callresult.result);
-            // вдруг кто-то сохранил мусор вместо LOKTEV_CHAT_MESSAGES?
+            
             if ( !Array.isArray(records) )
                 records=[];
         }
@@ -724,8 +724,7 @@ function readReady(callresult) { // сообщения получены - пок
     }
 }
 
-// получает сообщения с сервера, добавляет новое,
-// показывает и сохраняет на сервере
+
 function sendRecords() {
     updatePassword=Math.random();
     $.ajax( {
