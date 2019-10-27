@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery-min.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles/adaptive.css">
+</head>
+<body>
+<span id="load">Loading...</span>	
+<div id="main">
+	<div class="main-menu" id="main-menu">
+		<div id="userName">
+			<span id="name"></span>
+			<span id="changeName">Change name?</span>
+		</div>
+		
+		<span id='result'>Your result</span>
+
+		<div id="inputName">
+			<label for="gameName">Your name: </label>
+			<input type="text" id="gameName">
+			<svg id="acceptName" width='50' height='50'>
+				<line x1=6 y1=10 x2=25 y2=37 stroke='#fff' stroke-width='5'/>
+				<line x1=23 y1=36 x2=42 y2=18 stroke='#fff' stroke-width='5'/>
+			</svg>
+		</div>
+
+		<button id="continueBtn">Continue</button>
+		<button id="start">Start</button>
+		
+		<button id="btnHighscores" >Highscores</button>
+		<div id="tableHighscores" style="display: none;">
+			<div id="highscoresClose" class="close"><b>Close</b></div>
+			<div id="listHighscores"></div>
+		</div>
+		<button id="btnControl">Control</button>
+		<ul id="control">
+			<div id="controlClose" class="close"><b>Close</b></div>
+			<li><span class="descr">Shot:</span><span class="key">MouseLeft/Tap</span></li>
+			<li><span class="descr">Recharge:</span><span class="key">MouseRight(Space)/DoubleTap</span></li>
+			<li><span class="descr">Left/Right:</span><span class="key">Mouse-move/Swipe</span></li>
+		</ul>
+
+	</div>
+	<svg id="aim" width='30' height='30'>
+		<circle cx=15 cy=15 r=10 stroke='black' fill='none' id='aimCenter'/>
+		<line x1='15' y1='0' x2='15' y2='30' stroke='black' fill='none' stroke-width='0.5px'/>
+		<line x1='0' y1='15' x2='30' y2='15' stroke='black' fill='none' stroke-width='0.5px'/>
+		<line x1='15' y1='0' x2='15' y2='10' stroke='black' fill='none' stroke-width='1'/>
+		<line x1='15' y1='30' x2='15' y2='20' stroke='black' fill='none' stroke-width='1'/>	
+		<line x1='0' y1='15' x2='10' y2='15' stroke='black' fill='none' stroke-width='1'/>
+		<line x1='30' y1='15' x2='20' y2='15' stroke='black' fill='none' stroke-width='1'/>
+		<circle cx=15 cy=15 r=5 stroke='black' fill='none' id='aimCenter'/>
+	</svg>
+	<span id="timer">1 : 30</span>
+	<span id="scoreMain">Score: 0</span>
+	<svg  id='pause' width=25 height=25>
+		<rect x=0 y=0 width=25 height=25 rx=5 ry=5  fill='#000' fill-opacity='0.2' class='pause-rect'/>
+		<rect x=6 y=5 width=5 height=15 rx=1 ry=1  fill='#fff'/>
+		<rect x=14 y=5 width=5 height=15 rx=1 ry=1  fill='#fff'/>
+	</svg>
+	<svg  id='play' width=25 height=25>
+		<rect x=0 y=0 width=25 height=25 rx=5 ry=5  fill='#000' fill-opacity='0.2' class='pause-rect'/>
+		<polygon points='6,5 20,12.5 6,20' fill='#fff' />
+	</svg>
+	<div id="toLeft"></div>
+	<div id="toRight"></div>		
+	<div id="container">
+
+		<div id="tree">
+		</div>
+		<svg  id='pieceTree' width="205" height="215">
+
+				<a id='pathTree'>
+				<path  transform="translate(0.000000,215.000000) scale(0.100000,-0.100000)"
+				fill="none" stroke-width='10' stroke="none" d="M783 2103 c2 -5 21 -68 42 -141 l37 -133 -31 -87 c-18 -48 -41 -105
+				-52 -127 -12 -22 -19 -49 -17 -59 1 -10 -3 -21 -11 -24 -9 -3 -11 0 -6 8 6 9
+				4 11 -6 4 -22 -13 -59 -5 -122 27 -53 28 -58 29 -64 12 -4 -10 -16 -30 -27
+				-45 -17 -24 -27 -28 -67 -28 -26 0 -50 4 -53 9 -3 5 -22 12 -41 15 -19 4 -35
+				12 -35 19 0 7 20 26 43 44 31 23 55 33 90 35 26 2 47 5 47 8 0 3 -18 24 -40
+				45 -27 26 -40 48 -40 66 0 25 -3 27 -65 34 -36 3 -65 10 -65 15 0 11 118 70
+				141 70 29 0 1 57 -35 70 -46 16 -55 12 -61 -27 -4 -21 -10 -47 -14 -58 -7 -18
+				-9 -17 -26 10 -11 17 -31 46 -46 65 -25 33 -30 35 -73 32 -53 -5 -53 -5 -32
+				-117 8 -38 12 -72 10 -74 -3 -3 -34 9 -70 27 -83 41 -94 41 -94 -2 0 -28 6
+				-38 34 -55 34 -22 46 -39 46 -69 0 -11 73 -67 193 -150 184 -126 289 -220 259
+				-230 -7 -2 -12 -11 -12 -19 0 -9 6 -13 15 -9 10 4 15 -1 15 -14 0 -11 -3 -20
+				-7 -20 -14 1 -43 27 -43 39 0 8 -5 7 -15 -3 -14 -13 -12 -20 17 -63 18 -26 37
+				-51 42 -55 5 -3 -5 -10 -22 -15 -32 -8 -121 -71 -122 -86 0 -5 6 -5 13 -1 7 5
+				6 0 -3 -11 -13 -16 -15 -16 -18 -2 -6 30 -26 -3 -51 -83 -12 -41 -24 -84 -26
+				-95 -1 -11 -3 -23 -4 -27 0 -5 -9 -8 -18 -8 -12 0 -14 -3 -6 -8 7 -4 12 -16
+				11 -27 -1 -11 13 -43 31 -72 36 -59 77 -79 142 -70 22 3 39 3 39 0 0 -3 -16
+				-21 -35 -40 -19 -19 -35 -43 -35 -53 0 -11 -5 -20 -11 -20 -6 0 -9 -9 -6 -20
+				3 -10 0 -21 -5 -22 -13 -5 -19 -58 -6 -58 5 0 6 9 3 20 -4 14 -1 22 10 26 10
+				4 15 14 12 25 -3 12 0 19 9 19 8 0 14 -4 14 -9 0 -21 -13 -41 -26 -41 -8 0
+				-14 -4 -14 -10 0 -5 4 -10 10 -10 5 0 9 -16 7 -35 -2 -32 -3 -34 -16 -18 -12
+				16 -12 16 -6 -7 4 -14 16 -33 27 -43 19 -16 20 -24 13 -99 -3 -44 -11 -92 -16
+				-105 -13 -34 -30 -29 -24 7 3 16 2 30 -3 30 -4 0 -8 22 -7 50 1 50 -7 65 -19
+				34 -10 -25 -7 -69 5 -81 6 -6 10 -29 7 -51 -2 -23 1 -40 6 -39 5 1 12 -6 14
+				-16 3 -13 -3 -17 -27 -17 -17 0 -31 -4 -31 -10 0 -17 -18 -11 -22 7 -3 16 -6
+				15 -26 -5 -13 -13 -22 -25 -20 -26 2 -2 27 -6 56 -10 40 -5 52 -4 52 7 0 9 10
+				12 35 9 21 -3 35 0 35 7 0 6 4 11 10 11 5 0 43 22 84 49 41 27 87 52 103 55
+				15 4 70 23 122 42 108 41 126 44 241 44 138 -1 154 0 164 10 13 13 29 13 21 0
+				-10 -15 0 -12 24 9 12 11 18 22 13 25 -5 3 -7 52 -5 108 5 106 32 226 58 251
+				8 8 17 26 20 40 8 29 30 55 82 94 21 15 40 30 43 34 12 13 118 89 125 89 4 0
+				15 8 24 18 17 18 108 82 117 82 4 0 24 14 46 32 22 17 93 57 158 89 64 32 120
+				65 124 74 11 31 6 56 -19 89 -14 18 -22 36 -18 39 3 4 -2 7 -12 7 -18 0 -48
+				-13 -222 -97 -95 -45 -137 -53 -220 -38 -46 7 -80 43 -110 113 -25 58 -13 160
+				34 285 37 99 124 201 181 212 9 2 19 4 22 5 3 1 9 2 14 1 4 -1 19 11 32 26 13
+				15 24 24 24 20 0 -5 7 -1 16 7 9 9 14 28 12 45 -2 20 5 38 20 54 l23 25 -30
+				13 c-17 8 -31 17 -31 21 0 5 -16 8 -36 8 -27 0 -43 -7 -64 -30 -15 -16 -35
+				-30 -43 -30 -9 0 -17 -5 -19 -11 -2 -6 -20 -11 -41 -11 -21 0 -47 -8 -61 -19
+				-13 -10 -31 -19 -40 -19 -8 0 -22 -13 -31 -30 -9 -16 -22 -30 -30 -30 -7 0
+				-16 -9 -20 -20 -7 -21 -31 -28 -165 -45 -30 -4 -63 -12 -73 -17 -12 -6 -23 -5
+				-33 3 -11 9 -14 8 -14 -4 0 -24 -19 -31 -39 -13 -24 22 -26 21 -28 -16 -1 -17
+				-7 -36 -13 -42 -19 -19 -8 73 12 96 18 21 18 22 -12 41 -16 10 -30 21 -30 23
+				0 6 40 -15 72 -39 15 -11 31 -16 39 -12 7 5 10 4 5 -3 -9 -16 39 -9 60 9 13
+				10 42 13 110 12 56 -2 95 1 99 8 5 6 -9 9 -39 8 -51 -3 -70 8 -56 31 6 9 10
+				10 10 3 0 -9 8 -8 28 3 15 7 42 17 60 20 17 3 32 10 32 14 0 4 18 12 40 19 21
+				6 42 17 46 23 5 8 1 9 -12 3 -38 -15 -103 -22 -114 -11 -8 8 -11 7 -8 -3 3
+				-15 -61 -53 -75 -44 -4 2 -17 1 -28 -2 -16 -5 -19 -12 -15 -31 7 -26 -11 -34
+				-20 -9 -7 18 -41 20 -46 3 -8 -24 -58 39 -58 74 0 18 -9 44 -20 58 -18 24 -19
+				24 -33 6 -21 -29 -38 -12 -25 25 8 25 7 33 -7 49 -10 11 -24 20 -32 20 -7 0
+				-13 5 -13 10 0 6 -15 10 -32 10 l-33 0 33 -21 c17 -12 32 -24 32 -29 0 -7
+				-108 24 -142 41 -22 11 -61 12 -55 2z m-248 -1052 c9 -23 0 -23 -41 0 l-39 21
+				34 -29 c22 -20 30 -32 23 -37 -7 -4 -12 -15 -12 -24 0 -31 -71 -140 -89 -137
+				-17 3 -16 21 1 43 9 11 13 11 19 0 7 -10 9 -10 9 0 0 23 1 27 14 42 16 18 46
+				79 46 92 0 5 -6 8 -12 5 -7 -2 -18 3 -25 12 -10 14 -13 13 -21 -9 -6 -14 -17
+				-32 -26 -39 -9 -7 -13 -17 -10 -22 3 -5 -2 -9 -10 -9 -9 0 -13 -6 -10 -14 4
+				-10 13 -7 35 15 16 15 29 33 29 39 0 5 5 10 10 10 13 0 13 -1 -5 -37 -16 -32
+				-42 -61 -93 -106 l-33 -28 7 28 c17 78 38 146 42 135 2 -7 8 -12 13 -12 6 0 8
+				4 5 9 -3 5 3 11 14 14 12 3 20 14 20 26 0 29 45 51 76 37 13 -6 26 -17 29 -25z"/>
+			</a>
+			</svg>
+	 </div>
+</div>
+<script src="init.js"></script>
+<script type="text/javascript" src="polifills.js"></script>
+<script type="text/javascript" src="bulletHole.js"></script>
+</body>
+</html>

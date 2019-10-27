@@ -1,0 +1,513 @@
+#load {
+	width: 120px;
+	height: 100px;
+	margin: 100px auto;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+#main {
+	display: none;
+	margin: 0 auto;
+	position: relative;
+	cursor: none;
+	overflow: hidden;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+	border-radius: 7px;
+	-webkit-box-shadow: 4px 7px 20px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 4px 7px 20px 0px rgba(0,0,0,0.75);
+	box-shadow: 4px 7px 20px 0px rgba(0,0,0,0.75); 
+
+
+}
+
+
+.main-menu {
+	width: 730px;
+	height: 330px;
+	padding: 100px 50px;
+	background: rgba(199,156,91,1);
+background: -moz-linear-gradient(top, rgba(199,156,91,1) 0%, rgba(193,158,103,1) 36%, rgba(182,141,76,1) 63%, rgba(194,165,122,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(199,156,91,1)), color-stop(36%, rgba(193,158,103,1)), color-stop(63%, rgba(182,141,76,1)), color-stop(100%, rgba(194,165,122,1)));
+background: -webkit-linear-gradient(top, rgba(199,156,91,1) 0%, rgba(193,158,103,1) 36%, rgba(182,141,76,1) 63%, rgba(194,165,122,1) 100%);
+background: -o-linear-gradient(top, rgba(199,156,91,1) 0%, rgba(193,158,103,1) 36%, rgba(182,141,76,1) 63%, rgba(194,165,122,1) 100%);
+background: -ms-linear-gradient(top, rgba(199,156,91,1) 0%, rgba(193,158,103,1) 36%, rgba(182,141,76,1) 63%, rgba(194,165,122,1) 100%);
+	border: 10px solid #9E4E2E;
+	position: absolute;
+	top: 25px;
+	z-index: 5;
+	border-radius: 7px;
+	-webkit-box-shadow: 4px 7px 20px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 4px 7px 20px 0px rgba(0,0,0,0.75);
+	box-shadow: 4px 7px 20px 0px rgba(0,0,0,0.75);
+
+	display: flex;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: -moz-flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center; 
+}
+
+.main-menu::before,
+.main-menu::after {
+	content: '';
+	position: absolute;
+	top: -35px;
+	width: 20px;
+	height: 25px;
+	background: #CE8061;
+	border-left: 3px solid #9E4E2E;
+	border-right: 3px solid #9E4E2E;
+}
+.main-menu::before{
+	left: 150px;
+
+}
+
+.main-menu::after {
+	right: 150px;
+
+}
+
+.main-menu button {
+	width: 300px;
+	padding: 20px 30px;
+	cursor: none;
+	background: none;
+	border: 5px solid #9E4E2E;
+	font-size: 22px;
+	font-weight: bold;
+	font-family: 'Mansalva' , cursive;
+	color: #fff;  
+	border-radius: 10px;
+	position: relative;
+	outline: none; 
+}
+
+.main-menu button:before{
+    position: absolute;
+    content: '';
+    width: 0%; 
+    height: 100%;
+    background: #b3641e;
+    top: 0; 
+    left: 50%;
+    z-index: -1;
+    transition: all 0ms ease;
+  }
+  
+.main-menu button:hover {
+    color: white; 
+    box-shadow:none;
+}
+.main-menu button:hover:before {
+      position: absolute;
+      content: '';
+      width: 100%; height: 100%;
+      background: #b3641e;
+      top: 0; left: 0%;
+      z-index: -1;
+      transition: all 300ms ease;
+    }  
+#inputName input {
+		margin: 0 10px;
+    } 
+#inputName input:hover {
+	border-color: #b3641e;
+} 
+#result {
+	font-size: 22px;
+	font-weight: bold;
+	font-family: 'Mansalva' , cursive;
+	color: #fff; 
+	display: none; 
+}
+#inputName {
+	font-size: 22px;
+	font-weight: bold;
+	font-family: 'Mansalva' , cursive;
+	color: #fff; 
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-left: -50px;
+	display: none;
+}
+
+#inputName label {
+	cursor: none;
+}
+#gameName {
+	width: 250px;
+	padding: 10px 20px;
+	cursor: none;
+	background: none;
+	border: 5px solid #9E4E2E;
+	font-size: 22px;
+	font-weight: bold;
+	font-family: 'Mansalva' , cursive;
+	color: #fff;  
+	border-radius: 10px;
+	position: relative;
+	outline: none; 
+}
+
+#acceptName {
+	background:  #9E4E2E;
+	border-radius: 10px;
+}
+#acceptName:hover {
+	background: #b3641e;
+}
+
+#userName {
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	font-size: 22px;
+	font-weight: bold;
+	font-family: 'Mansalva' , cursive;
+	color: #fff; 
+	margin-top: -30px;
+}
+
+#changeName {
+	font-size: 16px;
+	border-bottom: 1px solid #fff;
+}
+#changeName:hover {
+	border-bottom: none;
+}
+
+.show-hide-menu {
+	transition: transform 0.5s linear;
+}
+#continueBtn,
+#newGameBtn {
+	display: none;
+}
+
+
+
+#container {
+	position: absolute;
+	background-image: url(../media/bg-min.jpg);
+	background-repeat: no-repeat; 
+	width: 1800px;
+	height:  100%;
+	-webkit-background-size: cover;
+	background-size: cover;
+	transform: translateZ(0);
+
+}
+.bird {
+	position: absolute;
+	width: 100px;
+	height: 90px;
+	z-index: 1;
+
+}
+
+
+.fall-bird {
+	animation: fall 0.5s ease-in-out infinite;
+	pointer-events:none;
+}
+
+@keyframes fall{
+	0% {opacity: 1}
+	50% {opacity: 0}
+	100% {opacity: 1}
+}
+
+
+.bullet {
+	width: 15px;
+	height: 60px;
+	position: absolute;
+	bottom: 20px;
+	right: 30px;
+	background: rgba(252,117,93,1);
+background: -moz-linear-gradient(left, rgba(252,117,93,1) 0%, rgba(196,40,25,1) 27%, rgba(173,28,9,1) 49%, rgba(191,37,23,1) 70%, rgba(230,72,58,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(252,117,93,1)), color-stop(27%, rgba(196,40,25,1)), color-stop(49%, rgba(173,28,9,1)), color-stop(70%, rgba(191,37,23,1)), color-stop(100%, rgba(230,72,58,1)));
+background: -webkit-linear-gradient(left, rgba(252,117,93,1) 0%, rgba(196,40,25,1) 27%, rgba(173,28,9,1) 49%, rgba(191,37,23,1) 70%, rgba(230,72,58,1) 100%);
+background: -o-linear-gradient(left, rgba(252,117,93,1) 0%, rgba(196,40,25,1) 27%, rgba(173,28,9,1) 49%, rgba(191,37,23,1) 70%, rgba(230,72,58,1) 100%);
+background: -ms-linear-gradient(left, rgba(252,117,93,1) 0%, rgba(196,40,25,1) 27%, rgba(173,28,9,1) 49%, rgba(191,37,23,1) 70%, rgba(230,72,58,1) 100%);
+background: linear-gradient(to right, rgba(252,117,93,1) 0%, rgba(196,40,25,1) 27%, rgba(173,28,9,1) 49%, rgba(191,37,23,1) 70%, rgba(230,72,58,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc755d', endColorstr='#e6483a', GradientType=1 );
+	transform: rotate(15deg);
+	border-top: 5px solid #850f02;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	-webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+z-index: 2;
+}
+
+.bullet::before {
+	content: '';
+	width: 15px;
+	height: 15px;
+	background: rgba(242,223,179,1);
+	background: -moz-linear-gradient(left, rgba(242,223,179,1) 0%, rgba(214,153,0,1) 48%, rgba(235,168,0,1) 71%, rgba(247,207,107,1) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(242,223,179,1)), color-stop(48%, rgba(214,153,0,1)), color-stop(71%, rgba(235,168,0,1)), color-stop(100%, rgba(247,207,107,1)));
+	background: -webkit-linear-gradient(left, rgba(242,223,179,1) 0%, rgba(214,153,0,1) 48%, rgba(235,168,0,1) 71%, rgba(247,207,107,1) 100%);
+	background: -o-linear-gradient(left, rgba(242,223,179,1) 0%, rgba(214,153,0,1) 48%, rgba(235,168,0,1) 71%, rgba(247,207,107,1) 100%);
+	background: -ms-linear-gradient(left, rgba(242,223,179,1) 0%, rgba(214,153,0,1) 48%, rgba(235,168,0,1) 71%, rgba(247,207,107,1) 100%);
+	background: linear-gradient(to right, rgba(242,223,179,1) 0%, rgba(214,153,0,1) 48%, rgba(235,168,0,1) 71%, rgba(247,207,107,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2dfb3', endColorstr='#f7cf6b', GradientType=1 );
+	position: absolute;
+	top: 40px;
+}
+
+.bullet::after {
+	content: '';
+	width: 19px;
+	height: 5px;
+	border-radius: 5px;
+	background: rgba(242,223,179,1);
+	background: -moz-linear-gradient(left, rgba(242,223,179,1) 0%, rgba(214,153,0,1) 48%, rgba(235,168,0,1) 71%, rgba(247,207,107,1) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(242,223,179,1)), color-stop(48%, rgba(214,153,0,1)), color-stop(71%, rgba(235,168,0,1)), color-stop(100%, rgba(247,207,107,1)));
+	background: -webkit-linear-gradient(left, rgba(242,223,179,1) 0%, rgba(214,153,0,1) 48%, rgba(235,168,0,1) 71%, rgba(247,207,107,1) 100%);
+	background: -o-linear-gradient(left, rgba(242,223,179,1) 0%, rgba(214,153,0,1) 48%, rgba(235,168,0,1) 71%, rgba(247,207,107,1) 100%);
+	background: -ms-linear-gradient(left, rgba(242,223,179,1) 0%, rgba(214,153,0,1) 48%, rgba(235,168,0,1) 71%, rgba(247,207,107,1) 100%);
+	background: linear-gradient(to right, rgba(242,223,179,1) 0%, rgba(214,153,0,1) 48%, rgba(235,168,0,1) 71%, rgba(247,207,107,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2dfb3', endColorstr='#f7cf6b', GradientType=1 );
+	position: absolute;
+	bottom: 0;
+	left: -2px;
+	-webkit-box-shadow: 6px 6px 5px -6px rgba(0,0,0,0.75);
+-moz-box-shadow: 6px 6px 5px -6px rgba(0,0,0,0.75);
+box-shadow: 6px 6px 5px -6px rgba(0,0,0,0.75);
+
+}
+
+.leave-bullet {
+	transform: translate(100px) scale(0.5) rotate3d(1, 1, 1, 180deg);
+	transition: transform 0.2s linear;
+	z-index: 1;
+}
+
+#aim {
+	position: absolute;
+	z-index: 999;
+	pointer-events:none;
+}
+
+#tree {
+	width: 43.66666666666667%;
+	height: 79.5%;
+	-webkit-background-size: cover;
+	background-size: cover;
+	position: absolute;
+	right: -18px;
+	top: -20px;
+	background: url(../media/tree-min.png) no-repeat;
+	z-index: 2;
+	pointer-events:none;
+
+}
+
+.foliage {
+	position: absolute;
+	right: 100px;
+	top: 250px;
+	width: 500px;
+	height: 300px;
+	z-index: 3;
+	background: url(../media/foliage.gif);
+	-webkit-background-size: cover;
+	background-size: cover;
+	pointer-events:none;
+
+
+}
+
+#pieceTree {
+	position: absolute;
+	right: 226px;
+	top: 230px;
+	pointer-events: visibleFill;
+	z-index: 3;
+}
+
+.birds-point {
+	position: absolute;
+	z-index: 4;
+	color: #fff;
+	font-size: 22px;
+	font-weight: bold;
+	font-family: 'Mansalva' , cursive ;   
+}
+
+#scoreMain {
+	position: absolute;
+	top: 30px;
+	right: 20px;
+	z-index: 4;
+	color: #fff;
+	font-size: 22px;
+	font-weight: bold; 
+	font-family: 'Mansalva' , cursive;
+	opacity: 0.9;   
+}
+
+#timer {
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	z-index: 4;
+	color: #fff;
+	font-size: 22px;
+	font-weight: bold;
+	font-family: 'Mansalva' , cursive;
+	opacity: 0.9;   
+}
+#timer,
+#scoreMain {
+	pointer-events: none;
+}
+
+#pause {
+	position: absolute;
+	top: 10px;
+	left: 20px;
+	z-index: 4;
+}
+#play {
+	position: absolute;
+	top: 10px;
+	left: 20px;
+	z-index: 4;
+	display: none;
+}
+
+#pause:hover .pause-rect,
+#play:hover .pause-rect {
+	fill-opacity: 0.5
+}
+
+
+#tableHighscores {
+	color: #fff;
+	font-size: 22px;
+	font-weight: bold;
+	font-family: 'Mansalva' , cursive;
+	margin-top: -60px;
+	position: relative;
+
+}
+
+#listHighscores {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+
+}
+
+#listHighscores>span {
+	padding: 5px 5px;
+	border-bottom: 1px solid #fff;
+	width: 400px;
+}
+#listHighscores>span b {
+	float: left;
+}
+#listHighscores>span i {
+	float: right;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.close {
+	position: absolute;
+	width: 50px;
+	left: -100px;
+	top: -20px;
+	border-bottom: 1px solid #fff;
+}
+.close:hover {
+	border-bottom: none;
+}
+
+#control {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	list-style: none;
+	color: #fff;
+	font-size: 22px;
+	font-weight: bold;
+	font-family: 'Mansalva' , cursive;
+	position: relative;
+	width: 70%;
+	display: none;
+}
+
+#control .descr {
+	float: left;
+}
+
+#control .key {
+	float: right;
+}
+
+
+#toRight,
+#toLeft {
+	width: 60px;
+	height: 30px;
+	background: lightgrey;
+	opacity: 0.6;
+	position: absolute;
+	bottom: 30px;
+	z-index: 3;
+	border-radius: 5px;
+}
+#toLeft {
+	left: 25px;
+	display: none;
+}
+#toRight {
+	left:  95px;
+	display: none;
+}
+
+#toRight:before {
+	content: '';
+	width: 0;
+	height: 0;
+	position: absolute;
+	border-style: solid;
+	border-width: 25px 0 25px 30px;
+	border-color: transparent transparent transparent lightgrey;
+	border-radius: 5px;
+	right: -22px;
+	top: -10px;
+}
+
+#toLeft:before {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 25px 30px 25px 0;
+	border-color: transparent lightgrey transparent transparent;
+	border-radius: 5px;
+	left: -22px;
+	top: -10px;
+}

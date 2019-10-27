@@ -1,0 +1,210 @@
+@media screen and (max-width: 890px) {
+	#toRight,
+	#toLeft {
+		display: block;
+	}
+	#aim {
+		display: none;
+	}
+	.main-menu {
+		width: 550px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.main-menu::before{
+		left: 30px;
+	}
+
+	.main-menu::after {
+		right: 30px;
+	}
+
+	.main-menu button,
+	.main-menu div,
+	#listHighscores>span {
+		width: 350px;
+	}
+
+	#pause,
+	#play {
+		transform: scale(1.2);
+		margin-top: 10px;
+	}
+
+	.main-menu .close {
+		top: -40px;
+		width: 50px;
+		left: -40px;
+	}
+	#control {
+		padding-left: 0;
+		width: 450px;
+	}	
+	#control li {
+		width: 450px;
+	}
+	#control li span {
+		font-size: 18px;
+	}
+}
+
+@media screen and (max-width: 620px) {
+	.main-menu {
+		width: 380px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.main-menu::before{
+		left: 30px;
+	}
+
+	.main-menu::after {
+		right: 30px;
+	}
+
+	.main-menu button,
+	.main-menu div,
+	#listHighscores>span  {
+		width: 240px;
+	}
+
+	#inputName {
+		margin-top: -40px;
+		padding: 5px;
+	}
+	#inputName label {
+		margin-left: 10px;
+	}
+	#gameName {
+		width: 180px;
+		padding: 10px 5px;
+	}
+	#acceptName {
+		position: absolute;
+	}
+
+	#pause,
+	#play {
+		transform: scale(1.5);
+		margin-top: 10px;
+	}
+
+	.main-menu .close {
+		width: 50px;
+		top: -40px;
+		left: -10px;
+	}
+	#control {
+		padding-left: 0;
+		width: 240px;
+	}	
+	#control li {
+		width: 240px;
+		display: flex;
+		flex-direction: column;
+	}
+	#control li span {
+		float: none;
+		font-size: 18px;
+	}
+	#control li span:last-child {
+		margin-left: 20px;
+	}
+}
+
+@media screen and (max-width: 440px) {
+
+	.main-menu {
+		width: 260px;
+		top: 10px;
+	}
+
+}
+
+@media screen and (max-height: 440px) {
+		.main-menu {
+			height: 220px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			font-size: 16px;
+		}
+		#result {
+			font-size: 16px;
+		}
+	.main-menu button,
+	.main-menu div,
+	#listHighscores>span {
+		height: 20px;
+		padding: 15px;
+		font-size: 14px;
+		line-height: 2px;
+	}
+	#userName {
+		margin-top: 0px;
+		height: 30px;
+		line-height: 22px;
+	} 
+
+	#inputName {
+		margin-top: -10px;
+		padding: 5px;
+		margin-left: -5px;
+		width: 400px;
+	}
+	#inputName label {
+		margin-left: 10px;
+	}
+	#gameName {
+		width: 200px;
+		height: 20px;
+		padding: 5px 5px;
+	}
+	#acceptName {
+		transform: scale(0.8);
+		margin-top: -5px;
+	}
+	#pause,
+	#play {
+		transform: scale(0.9);
+		margin-top: -5px;
+	}
+
+	.main-menu .close {
+		width: 50px;
+		top: -40px;
+		left: -10px;
+	}
+	#control {
+		margin-top: 40px;
+		padding-left: 0;
+		width: 240px;
+	}	
+	#control li {
+		width: 240px;
+		display: flex;
+		flex-direction: column;
+	}
+	#control li span {
+		float: none;
+		font-size: 18px;
+	}
+	#control li span:last-child {
+		margin-left: 20px;
+	}
+	#tableHighscores {
+	font-size: 18px;
+	margin-top: 20px;
+}
+	#listHighscores {
+		width: 320px;
+		height: 140px;
+		overflow-y: auto; 
+	}
+	#listHighscores>span {
+		width: 300px;
+	}
+
+
+}
